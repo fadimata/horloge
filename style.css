@@ -1,0 +1,135 @@
+
+body{
+    background-color: rgb(87, 85, 81);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contener{
+    margin: auto;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    position: relative;background-color: rgb(92, 87, 81);
+    box-shadow: 0px 1px 39px 7px;
+}
+
+/* positionnement des heures dans le cercle*/
+.contener .number{
+    position: absolute;
+    width: 100%;
+    height: 100%; 
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 1.5rem;
+}
+/* positionnement des heurs dans le cercle separement */
+.contener .number1{ --rotation: 30deg;  }
+.contener .number2{ --rotation: 60deg;  }
+.contener .number3{ --rotation: 90deg;  }
+.contener .number4{ --rotation: 120deg; }
+.contener .number5{ --rotation: 150deg; }
+.contener .number6{ --rotation: 180deg; }
+.contener .number7{ --rotation: 210deg; }
+.contener .number8{ --rotation: 240deg; }
+.contener .number9{ --rotation: 270deg; }
+.contener .number10{ --rotation:300deg; }
+.contener .number11{ --rotation:330deg; }
+
+.contener .aiguille {
+    --rotation:0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 10px;
+    height: 50%;
+    border: 1px solid rgb(248, 243, 243);
+    transform-origin: bottom;
+    /* transform: translateX(-50%)rotate(calc(var(--rotation) * 1deg)); */
+    transform: translate(-50%, -50%);
+
+}
+
+/* le poind du centre */
+.contener::after{
+    content: '';
+    border: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+/* heures */
+.aiguille.hr{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 3px;
+    z-index: 10;
+    height: 55px;
+    border: none;
+    background-color: rgb(19, 20, 21);
+    z-index: 10;
+} 
+
+/* minutes */
+.aiguille.mn{
+    position: absolute;
+    width: 3px;
+    height: 75px;
+    background-color: rgb(94, 33, 3);
+    border: none;
+    z-index: 9;
+}
+
+/* second */
+.aiguille.sec{
+    position: absolute;
+    width: 2px;
+    height: 85px;
+    background-color: rgb(227, 215, 199);
+    border: none;
+    z-index: 8;
+}
+
+.aiguille.hr>i{
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    background-color: black;
+    border-radius: 50%;
+    margin-top: -18px;
+  
+}
+.aiguille.mn>i{
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: rgb(63, 31, 31);
+    border-radius: 50%;
+    margin-left: -3px ;
+    margin-top: -20px;
+  
+}
+.aiguille.sec>i{
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    background-color: rgb(209, 202, 202);
+    border-radius: 50%;
+    margin-left: -3px ;
+    margin-top: -22px;
+  
+}
+
+
+
